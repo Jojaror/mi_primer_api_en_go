@@ -31,9 +31,9 @@ func main() { ... }
 ```func``` Es la palabra clave en Go para definir una función. ```main``` Es el nombre de la función. La función llamada main dentro del paquete main es muy especial. Es el punto de entrada de tu programa. ```()``` Los paréntesis después del nombre de la función son para los parámetros. En este caso, la función main no recibe ningún parámetro. ```{ ... }``` Las llaves definen el cuerpo de la función.
 
 ````bash
-fmt.Println("Hello world!")
+fmt.Println("Hola mundo!")
 ````
-Accedemos al paquete *fmt* que importamos y usamos la función *Println* que viene de *Print Line* (imprimir linea) pasandole como argumento un string *"Hello world!"*.
+Accedemos al paquete ```fmt``` que importamos y usamos la función ```Println``` que viene de *Print Line (imprimir linea)* pasandole como argumento un string ```"Hola mundo!"```.
 
 ## Ejecutando la App
 
