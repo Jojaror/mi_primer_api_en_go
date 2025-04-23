@@ -24,7 +24,7 @@ func main() {
 	fmt.Println("Hola mundo!")
 }
 ````
-```package``` Es una palabra clave en Go que se usa para declarar a qué paquete pertenece el archivo actual. ```main``` Es un nombre de paquete especial. Cuando le dices a Go que un archivo pertenece al paquete main, le estás indicando que este código debe compilarse para ser un programa ejecutable.
+```package``` Es una palabra clave en Go que se usa para declarar a qué paquete pertenece el archivo actual. ```main``` Es un nombre de paquete especial. Cuando le dices a Go que un archivo pertenece al paquete main, le estás indicando que este código debe compilarse para ser un programa ejecutable de ese paquete.
 
 ````go
 import "fmt"
