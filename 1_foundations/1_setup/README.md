@@ -38,5 +38,5 @@ Accedemos al paquete ```fmt``` que importamos y usamos la función ```Println```
 ## Ejecutando la App
 
 ````bash
-go run foundations/setup/main.go
+go run 1_foundations/1_setup/main.go
 ````
