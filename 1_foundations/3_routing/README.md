@@ -21,10 +21,3 @@ if r.URL.Path != "/" {
 ```http.NotFound(w, r)``` Si la condición del ```if``` es verdadera (la ruta no es /), se llama a esta función del paquete ```net/http```. Es una forma rápida y estándar de enviar una respuesta *HTTP 404 Not Found* al cliente. Toma el *ResponseWriter (w)* y el *Request (r)* como argumentos.
 
 ```return``` Esta palabra clave detiene la ejecución de la función ```home``` en este punto. Es importante porque si enviamos una respuesta *404*, no queremos continuar y ejecutar el *w.Write(...)* que viene después.
-
-## Qué hay sobre enrutamiento RESTful?
-El enrutador **servemux** incluido en la librería estándar de **Go** es muy ligero, pero presenta algunas limitaciones para el desarrollo de **APIs RESTful** avanzadas:
-
-- **Control por método HTTP**: No diferencia nativamente entre peticiones GET, POST, PUT, DELETE, etc.
-- **URLs con variables**: No permite definir rutas con parámetros dinámicos (por ejemplo, /users/{id}).
-- **Patrones avanzados**: No admite expresiones regulares para coincidencias más complejas.

@@ -21,9 +21,9 @@ Se llama a ```http.NewServeMux()``` para crear un nuevo ServeMux. Actúa como un
 mux.HandleFunc("/", home)
 ````
 Se usa el método ```HandleFunc``` del ```mux``` para registrar una ruta y su manejador.
-```"/"``` Es el patrón de la URL. En este caso, **/** es la ruta raíz. ```home``` Es el nombre de la función que se ejecutará cuando una petición coincida con el patrón **/**. Le estamos diciendo al **mux** "Cuando llegue una petición para /, llama a la función home".
+```"/"``` Es el patrón de la URL. En este caso, **/** es la ruta raíz. ```home``` Es el nombre de la función que se ejecutará cuando una petición coincida con el patrón **/**. Le estamos diciendo al **mux** "Cuando llegue una petición para /, llama a la función home". Luego Hacemos una impresión en la consola del server para mostrar que nuestra web app se está ejecutando.
 
-Hacemos una impresión en la consola del server para mostrar que nuestra web app se está ejecutando y finalmente, necesitamos un **Web Server**, que afortunadamente **Go** lo establece facilmente.
+Finalmente, necesitamos un **Web Server**, que afortunadamente **Go** lo establece facilmente.
 
 ````bash
 err := http.ListenAndServe(":9876", mux)
