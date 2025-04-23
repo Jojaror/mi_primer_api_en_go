@@ -15,22 +15,28 @@ El comando creará un archivo go.mod en la carpeta proyecto.
 
 ## ¡ Hola mundo !
 
-````bash
+````go
 package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hola mundo!")
+}
 ````
 ```package``` Es una palabra clave en Go que se usa para declarar a qué paquete pertenece el archivo actual. ```main``` Es un nombre de paquete especial. Cuando le dices a Go que un archivo pertenece al paquete main, le estás indicando que este código debe compilarse para ser un programa ejecutable.
 
-````bash
+````go
 import "fmt"
 ````
 ```import``` Es una palabra clave se usa para traer código de otros paquetes a tu archivo actual. ```"fmt"``` Es el nombre del paquete que estamos importando. Este es un paquete estándar de Go.
 
-````bash
+````go
 func main() { ... }
 ````
 ```func``` Es la palabra clave en Go para definir una función. ```main``` Es el nombre de la función. La función llamada main dentro del paquete main es muy especial. Es el punto de entrada de tu programa. ```()``` Los paréntesis después del nombre de la función son para los parámetros. En este caso, la función main no recibe ningún parámetro. ```{ ... }``` Las llaves definen el cuerpo de la función.
 
-````bash
+````go
 fmt.Println("Hola mundo!")
 ````
 Accedemos al paquete ```fmt``` que importamos y usamos la función ```Println``` que viene de *Print Line (imprimir linea)* pasandole como argumento un string ```"Hola mundo!"```.
