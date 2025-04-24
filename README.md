@@ -19,6 +19,6 @@ Bienvenido a esta guía simplificada para Go. En este proyecto aprenderás los c
 10. **Using request context**: Uso efectivo de contextos en las peticiones para un control detallado.  
 11. **Optional Go features**: Exploración de características opcionales que enriquecen la funcionalidad.  
 12. **Testing**: Prácticas y herramientas para asegurar la calidad y confiabilidad del código.  
-13. **Extras**: Finalización completa del proyecto, liberado como versión 1.0.
+13. **Extras**: Finalización del proyecto.
 
-> **Nota:** Este proyecto se inspira en el libro **Let's Go 2nd edition** de Alex Edwards, y se enriquece con aportes y mejoras propias. Cada sección de esta guía representa un paso en el desarrollo progresivo de la API, que se documentará y acompañará de material explicativo para facilitar el aprendizaje. Este proyecto debe ser visto complemento y nunca como reemplazo al mencionado libro.
+> **Nota:** Este proyecto se inspira en el libro **Let's Go 2nd edition** de Alex Edwards, y se enriquece con aportes y mejoras propias. Cada sección de esta guía representa un paso en el desarrollo progresivo de la API, que se documentará y acompañará de material explicativo para facilitar el aprendizaje. Este proyecto debe ser visto como complemento y nunca como reemplazo al mencionado libro.

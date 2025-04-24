@@ -1,0 +1,1 @@
+# Sirviendo archivos estáticos
