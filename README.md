@@ -21,4 +21,16 @@ Bienvenido a esta guía simplificada para Go. En este proyecto aprenderás los c
 12. **Testing**: Prácticas y herramientas para asegurar la calidad y confiabilidad del código.  
 13. **Extras**: Finalización del proyecto.
 
+### Puntos de acceso
+
+| Método | Ruta         | Manejador       | Descripción                          |
+|--------|--------------|-----------------|--------------------------------------|
+| GET    | /            | home            | Muestra la página principal
+| GET    | /view/:id    | view            | Muestra un objeto en especifico
+| GET    | /create      | create          | Muestra un formulario de creacion de objeto
+| POST   | /create      | createPost      | Crea un nuevo objeto
+| GET    | /static/     | http.FileServer | Sirve archivos estaticos especificos
+
+
+___________________________________________________________________________________
 > **Nota:** Este proyecto se inspira en el libro **Let's Go 2nd edition** de Alex Edwards, y se enriquece con aportes y mejoras propias. Cada sección de esta guía representa un paso en el desarrollo progresivo de la API, que se documentará y acompañará de material explicativo para facilitar el aprendizaje. Este proyecto debe ser visto como complemento y nunca como reemplazo al mencionado libro.
