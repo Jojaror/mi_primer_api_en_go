@@ -8,7 +8,11 @@ import (
 	"net/http"
 	"os"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/Jojaror/mi_primer_api_en_go/test/internal/models"
+	"github.com/Jojaror/mi_primer_api_en_go/project/internal/models"
+	"github.com/go-playground/form/v4"
+	"time"
+	"github.com/alexedwards/scs/mysqlstore" // New import
+  "github.com/alexedwards/scs/v2" 
 )
 
 type application struct {
@@ -16,6 +20,8 @@ type application struct {
 	infoLog  *log.Logger
 	snippets *models.SnippetModel
 	templateCache map[string]*template.Template
+	formDecoder   *form.Decoder
+	sessionManager *scs.SessionManager
 }
 
 func openDB(dsn string) (*sql.DB, error) {
@@ -44,11 +50,17 @@ func main() {
 	if err != nil {
 		errorLog.Fatal(err)
 	}
+	formDecoder := form.NewDecoder()
+	sessionManager := scs.New()
+	sessionManager.Store = mysqlstore.New(db)
+	sessionManager.Lifetime = 12 * time.Hour
 	app := &application{
-		errorLog: errorLog,
-		infoLog:  infoLog,
-		snippets: &models.SnippetModel{DB: db},
-		templateCache: templateCache,
+		errorLog: 			errorLog,
+		infoLog:  			infoLog,
+		snippets: 			&models.SnippetModel{DB: db},
+		templateCache:	templateCache,
+		formDecoder:   	formDecoder,
+		sessionManager: sessionManager,
 	}
 	srv := &http.Server{
 		Addr:     *addr,

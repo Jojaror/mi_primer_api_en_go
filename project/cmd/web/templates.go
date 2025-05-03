@@ -4,13 +4,15 @@ import (
 	"html/template"
   "path/filepath"
 	"time"
-	"github.com/Jojaror/mi_primer_api_en_go/test/internal/models"
+	"github.com/Jojaror/mi_primer_api_en_go/project/internal/models"
 )
 
 type templateData struct {
-	CurrentYear int
-	Snippet *models.Snippet
-	Snippets []*models.Snippet
+	CurrentYear	int
+	Snippet 		*models.Snippet
+	Snippets 		[]*models.Snippet
+	Form 				any
+	Flash 			string
 }
 
 func humanDate(t time.Time) string {
