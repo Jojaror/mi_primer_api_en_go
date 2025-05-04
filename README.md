@@ -23,13 +23,18 @@ Bienvenido a esta guía simplificada para Go. En este proyecto aprenderás los c
 
 ### Puntos de acceso
 
-| Método | Ruta         | Manejador       | Descripción                          |
-|--------|--------------|-----------------|--------------------------------------|
-| GET    | /            | home            | Muestra la página principal
-| GET    | /view/:id    | view            | Muestra un objeto en especifico
-| GET    | /create      | create          | Muestra un formulario de creacion de objeto
-| POST   | /create      | createPost      | Crea un nuevo objeto
-| GET    | /static/     | http.FileServer | Sirve archivos estaticos especificos
+| Método | Ruta               | Manejador       | Descripción                          |
+|--------|--------------------|-----------------|--------------------------------------|
+| GET    | /                  | home            | Muestra la página principal
+| GET    | /snippet/view/:id  | view            | Muestra la página de un objeto en especifico
+| GET    | /snippet/create    | create          | Muestra la página de formulario de creacion de objeto
+| GET    | /user/signup       | userSignup      | Muestra la página de regristro de usuario
+| GET    | /user/login        | userLogin       | Muestra la página de inicio de sesión
+| GET    | /static/           | http.FileServer | Sirve archivos estaticos especificos
+| POST   | /snippet/create    | createPost      | Crea un nuevo objeto
+| POST   | /user/signup       | userSignupPost  | Crea un nuevo usuario
+| POST   | /user/login        | userLoginPost   | Autentica al usuario
+| POST   | /user/logout       | userLogoutPost  | Cierra la sesión del usuario
 
 
 ___________________________________________________________________________________
