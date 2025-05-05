@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"github.com/justinas/alice"
 	"github.com/julienschmidt/httprouter"
+	"github.com/Jojaror/mi_primer_api_en_go/project/ui"
 )
 
 func (app *application) routes() http.Handler {
@@ -11,9 +12,9 @@ func (app *application) routes() http.Handler {
 	router.NotFound = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		app.notFound(w)
 	})
-	fileServer := http.FileServer(http.Dir("./ui/static/"))
-	router.Handler(http.MethodGet, "/static/*filepath", http.StripPrefix("/static", fileServer))
-	dynamic := alice.New(app.sessionManager.LoadAndSave, noSurf)
+	fileServer := http.FileServer(http.FS(ui.Files))
+	router.Handler(http.MethodGet, "/static/*filepath", fileServer)
+	dynamic := alice.New(app.sessionManager.LoadAndSave, noSurf, app.authenticate)
 	router.Handler(http.MethodGet, "/",  dynamic.ThenFunc(app.home))
 	router.Handler(http.MethodGet, "/snippet/view/:id",  dynamic.ThenFunc(app.view))
 	router.Handler(http.MethodGet, "/user/signup", dynamic.ThenFunc(app.userSignup))
